@@ -8,8 +8,6 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/css/landing.css',   // 👈 WAJIB
-                'resources/css/header.css',    // 👈 jika ada
-                'resources/css/register.css',  // 👈 jika ada
                 'resources/js/app.js',
             ],
             refresh: true,

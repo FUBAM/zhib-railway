@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page-style')
+    @include('styles.landing')
+@endsection
+
 @section('content')
 
 <section class="hero">

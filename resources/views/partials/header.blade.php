@@ -1,3 +1,7 @@
+@section('page-style')
+    @include('styles.landing')
+@endsection
+
 <header class="navbar @yield('navbar-class')">
     <div class="navbar-container">
 

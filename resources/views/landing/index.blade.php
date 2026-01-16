@@ -1,12 +1,9 @@
 @extends('layouts.app')
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/landing.css') }}">
-
 @vite([
     'resources/css/landing.css',
 ])
-    
 @endpush
 
 @section('content')

@@ -10,7 +10,10 @@
 
     {{-- Global Styles --}}
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
+    @vite([
+        'resources/css/landing.css',
+    ])
+
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
     @stack('styles')
 

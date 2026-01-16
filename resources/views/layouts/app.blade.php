@@ -70,6 +70,1362 @@
             from { opacity: 0; transform: translate(-50%, -60%); }
             to { opacity: 1; transform: translate(-50%, -50%); }
         }
+
+        /* ---     */
+
+                /* ================= RESET ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #000;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .hero-overlay h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* ================= SECTION ================= */
+        .section {
+            background: #f5f5f5;
+            margin: 40px 0;
+            padding: 60px 0;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* ===== AUTH POPUP ===== */
+        .auth-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Layar jadi gelap */
+            z-index: 999;
+            display: none; /* Sembunyi secara default */
+        }
+
+        #authOverlay {
+            display: none; /* Sembunyi default */
+            position: fixed;
+            top: 0; 
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9998; /* Sangat tinggi */
+            backdrop-filter: blur(2px);
+        }
+
+        #authOverlay.active {
+            display: block !important;
+        }
+
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            padding: 2rem;
+            border-radius: 14px;
+            z-index: 1000;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .auth-modal.active {
+            display: block !important; /* Paksa Tampil */
+            animation: fadeIn 0.3s ease;
+        }
+
+        .auth-modal.hidden {
+            display: none !important;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -60%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+
+        .auth-modal h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .auth-modal label {
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+            display: block;
+        }
+
+        .auth-modal input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+        }
+
+        .forgot-link {
+            font-size: 12px;
+            margin-top: 6px;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            margin: 12px 0;
+        }
+
+        .primary-btn {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .switch-text {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 14px;
+        }
+
+        .switch-text a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* === form ceckbox login ===*/
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 18px 0 26px;
+            font-size: 14px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .remember input {
+            width: 14px;
+            height: 14px;
+        }
+
+        .forgot-link {
+            font-size: 14px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .register-agree {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            margin: 16px 0 20px;
+        }
+
+        .register-agree input {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ================= PERBAIKAN POPUP LUPA SANDI ================= */
+
+        /* 1. Mengatur ukuran ikon gembok agar kecil dan rapi */
+        .forgot-icon {
+            width: 80px; /* Ukuran gambar diperkecil jadi 80px */
+            height: auto; /* Tinggi menyesuaikan agar tidak gepeng */
+            display: block; /* Agar bisa diposisikan di tengah */
+            margin: 0 auto 20px; /* Posisi tengah (auto) dan jarak bawah 20px */
+        }
+
+        /* 2. Merapikan teks deskripsi */
+        .forgot-desc {
+            text-align: center; /* Teks rata tengah */
+            font-size: 13px; /* Ukuran huruf pas */
+            color: #6b7280; /* Warna abu-abu yang enak dibaca */
+            margin-bottom: 20px; /* Jarak ke input */
+            line-height: 1.5; /* Jarak antar baris */
+        }
+
+        /* 3. Merapikan tulisan "ATAU" */
+        .divider {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 12px;
+            color: #9ca3af;
+            font-weight: bold;
+        }
+
+        /* 4. Memastikan link "Buat Akun Baru" ada di tengah */
+        #forgotModal a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* =========================================
+        STYLE KHUSUS POPUP (MIRIP FIGMA)
+        ========================================= */
+
+        /* 1. UBAH BENTUK MODAL JADI LEBIH BULAT */
+        .auth-modal {
+            border-radius: 30px; /* Sudut sangat bulat sesuai desain */
+            padding: 40px; /* Ruang dalam lebih lega */
+            width: 400px; /* Sedikit lebih lebar agar proporsional */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            font-family: "Segoe UI", sans-serif; /* Pastikan font sesuai */
+        }
+
+        /* 2. JUDUL "Lupa sandi?" */
+        .auth-modal h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        /* 3. ICON GEMBOK */
+        .forgot-icon {
+            width: 70px; /* Ukuran pas, tidak meledak */
+            height: auto;
+            display: block;
+            margin: 10px auto 20px; /* Tengah */
+            opacity: 0.9;
+        }
+
+        /* 4. TEKS DESKRIPSI */
+        .forgot-desc {
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #9ca3af; /* Abu-abu soft seperti desain */
+            margin-bottom: 25px;
+            padding: 0 10px; /* Sedikit padding kiri kanan biar rapi */
+        }
+
+        /* 5. INPUT FORM */
+        .auth-modal input[type="text"],
+        .auth-modal input[type="password"],
+        .auth-modal input[type="email"] {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 14px 16px; /* Padding dalam lebih besar */
+            border-radius: 12px; /* Sudut input membulat */
+            font-size: 14px;
+            color: #374151;
+            width: 100%;
+            margin-bottom: 20px; /* Jarak ke tombol */
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .auth-modal input:focus {
+            border-color: #000; /* Fokus jadi hitam */
+        }
+
+        /* 6. TOMBOL "Kirim Tautan" */
+        .primary-btn {
+            background: #000000; /* Hitam pekat */
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 14px;
+            border-radius: 10px; /* Sudut tombol membulat */
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            margin-top: 5px;
+        }
+
+        .primary-btn:hover {
+            background: #333;
+        }
+
+        /* 7. DIVIDER "ATAU" DENGAN GARIS (PENTING!) */
+        .divider {
+            display: flex; /* Pakai Flexbox untuk garis */
+            align-items: center;
+            text-align: center;
+            color: #9ca3af; /* Warna teks abu kebiruan */
+            font-size: 12px;
+            font-weight: 700;
+            margin: 24px 0; /* Jarak atas bawah */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Garis Kiri dan Kanan */
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1; /* Memenuhi sisa ruang */
+            border-bottom: 1px solid #e5e7eb; /* Garis tipis */
+        }
+
+        .divider::before {
+            margin-right: 15px; /* Jarak garis ke teks */
+        }
+
+        .divider::after {
+            margin-left: 15px; /* Jarak teks ke garis */
+        }
+
+        /* 8. LINK "Buat Akun Baru" */
+        #forgotModal a {
+            display: block;
+            text-align: center;
+            color: #3b82f6; /* Biru terang sesuai desain */
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        #forgotModal a:hover {
+            text-decoration: underline;
+        }
+
+        /* 9. TOMBOL CLOSE (X) */
+        .close-btn {
+            font-size: 28px;
+            color: #000;
+            top: 20px;
+            right: 25px;
+            font-weight: lighter;
+        }
+
+        body {
+            pointer-events: auto !important;
+        }
+
+        .navbar,
+        .navbar * {
+            pointer-events: auto !important;
+        }
+
+        /* ================= NEWS ================= */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .news-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-bottom: 12px;
+
+            /* --- TAMBAHAN PENTING --- */
+            display: block; /* Agar link membungkus gambar & teks sepenuhnya */
+            text-decoration: none; /* Menghilangkan garis bawah biru */
+            color: inherit; /* Warna teks mengikuti aslinya (hitam) */
+            cursor: pointer; /* Ubah kursor jadi gambar tangan */
+            transition: transform 0.2s, box-shadow 0.2s; /* Animasi halus */
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px); /* Kartu naik sedikit */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Muncul bayangan */
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .news-card p {
+            padding: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #000000; /* Pastikan teks tetap hitam */
+        }
+
+        .news-image-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #fff; /* hitam kebiruan */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .news-image-frame img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* ===============================
+        PILIHAN EVENT (FIGMA STYLE)
+        ================================ */
+        .communities {
+            background: #f3f4f6; /* abu terang seperti figma */
+            padding: 70px 20px;
+            margin-top: 60px;
+        }
+
+        .communities h2 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .communities-subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* SLIDER CONTAINER */
+        .slider-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* BUTTON */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .slider-btn:hover {
+            background: #000;
+        }
+
+        .prev-btn {
+            left: -18px;
+        }
+
+        .next-btn {
+            right: -18px;
+        }
+
+        .scroll-wrapper {
+            display: flex;
+            flex-wrap: nowrap; /* ❗ TIDAK BOLEH WRAP */
+            gap: 20px;
+            overflow-x: auto; /* ❗ SCROLL KE SAMPING */
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+        }
+
+        .scroll-wrapper > * {
+            flex-shrink: 0;
+        }
+
+        .scroll-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* CARD */
+        .community-card {
+            background: #ffffff;
+            width: 230px;
+            flex: 0 0 auto; /* ❗ PENTING: jangan shrink & jangan wrap */
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease;
+        }
+
+        .community-card:hover {
+            transform: translateY(-6px);
+        }
+
+        /* IMAGE */
+        .card-image-link {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* CONTENT */
+        .card-content {
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        /* LINK */
+        .card-link {
+            font-size: 12px;
+            font-weight: 600;
+            color: #111827;
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* BUTTON */
+        .slider-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
+            border-radius: 50%;
+        }
+
+        .prev-btn {
+            left: -18px;
+        }
+        .next-btn {
+            right: -18px;
+        }
+
+        .slider-btn:hover {
+            background: #000;
+        }
+
+        /* FRAME EVENT 9:16 */
+        .event-image-frame {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #000; /* hitam elegan */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* POSTER */
+        .event-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* DEFAULT: penuh */
+        }
+
+        /* 🔐 MODE AMAN (AUTO) */
+        .event-image-frame img[data-safe="true"] {
+            object-fit: contain; /* kalau poster aneh */
+        }
+
+        .event-image {
+            width: 100%;
+            height: 280px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .event-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* ================= HALL OF FAME (SCROLLABLE) ================= */
+        .hof-grid {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            flex-wrap: nowrap;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 400; /* tidak bold */
+            color: #6b7280; /* abu halus */
+            margin-top: -20px; /* mendekat ke judul */
+            margin-bottom: 40px;
+        }
+
+        .hof-card {
+            min-width: 200px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .hof-card h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .badges {
+            margin-top: 8px;
+        }
+
+        .badges img {
+            width: 20px;
+            margin: 0 4px;
+        }
+
+        /* ================= RESET ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #000;
+        }
+
+        /* PROFILE DROPDOWN (RIGHT) */
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-dropdown {
+            position: relative;
+        }
+
+        .profile-navbar {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .profile-navbar:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+
+        .profile-text {
+            text-align: right;
+            line-height: 1.1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .profile-name {
+            font-size: 16px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        .profile-level {
+            font-size: 14px;
+            font-weight: 900;
+            color: #ff2d2d;
+        }
+
+        .profile-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Profile Menu Dropdown */
+        .profile-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: #fff;
+            min-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 8px 0;
+            display: none;
+            z-index: 1000;
+        }
+
+        .profile-dropdown.active .profile-menu {
+            display: block;
+        }
+
+        .profile-menu a {
+            display: block;
+            padding: 10px 16px;
+            font-size: 14px;
+            color: #111;
+            text-decoration: none;
+            transition: background 0.2s;
+            font-weight: 600;
+        }
+
+        .profile-menu a:hover {
+            background: #f5f5f5;
+        }
+
+        .profile-menu .logout {
+            color: #ff2d2d;
+            font-weight: 700;
+        }
+
+        .profile-menu hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 6px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .navbar-container {
+                padding: 0 20px;
+            }
+
+            .profile-navbar {
+                padding: 8px 14px;
+                gap: 10px;
+            }
+
+            .profile-name {
+                font-size: 14px;
+            }
+
+            .profile-level {
+                font-size: 12px;
+            }
+
+            .profile-avatar {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .profile-text {
+                display: none;
+            }
+
+            .profile-navbar {
+                padding: 8px;
+            }
+        }
+        /* ================= HERO ================= */
+        .hero {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .hero-overlay h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* ================= SECTION ================= */
+        .section {
+            background: #f5f5f5;
+            margin: 40px 0;
+            padding: 60px 0;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* ================= NEWS ================= */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .news-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-bottom: 12px;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .news-card p {
+            padding: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .news-image-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #fff; /* hitam kebiruan */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .news-image-frame img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* ================= UPDATE NEWS CARD JADI LINK ================= */
+
+        .news-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-bottom: 12px;
+
+            /* TAMBAHAN PENTING AGAR RAPI SEBAGAI LINK: */
+            display: block; /* Agar kotak bisa diklik utuh */
+            text-decoration: none; /* Menghilangkan garis bawah link */
+            color: inherit; /* Warna teks mengikuti warna asli (hitam), bukan biru link */
+            transition: transform 0.2s, box-shadow 0.2s; /* Efek animasi halus */
+            cursor: pointer;
+        }
+
+        /* Efek saat mouse diarahkan ke berita */
+        .news-card:hover {
+            transform: translateY(-5px); /* Naik sedikit */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Bayangan muncul */
+        }
+
+        .news-card p {
+            padding: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #000; /* Pastikan teks tetap hitam */
+        }
+
+        /* ===============================
+        PILIHAN EVENT (FIGMA STYLE)
+        ================================ */
+        .communities {
+            background: #f3f4f6; /* abu terang seperti figma */
+            padding: 70px 20px;
+            margin-top: 60px;
+        }
+
+        .communities h2 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .communities-subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* SLIDER CONTAINER */
+        .slider-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* BUTTON */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .slider-btn:hover {
+            background: #000;
+        }
+
+        .prev-btn {
+            left: -18px;
+        }
+
+        .next-btn {
+            right: -18px;
+        }
+
+        .scroll-wrapper {
+            display: flex;
+            flex-wrap: nowrap; /* ❗ TIDAK BOLEH WRAP */
+            gap: 20px;
+            overflow-x: auto; /* ❗ SCROLL KE SAMPING */
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+        }
+
+        .scroll-wrapper > * {
+            flex-shrink: 0;
+        }
+
+        .scroll-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* CARD */
+        .community-card {
+            background: #ffffff;
+            width: 230px;
+            flex: 0 0 auto; /* ❗ PENTING: jangan shrink & jangan wrap */
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease;
+        }
+
+        .community-card:hover {
+            transform: translateY(-6px);
+        }
+
+        /* IMAGE */
+        .card-image-link {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* CONTENT */
+        .card-content {
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        /* LINK */
+        .card-link {
+            font-size: 12px;
+            font-weight: 600;
+            color: #111827;
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* BUTTON */
+        .slider-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
+            border-radius: 50%;
+        }
+
+        .prev-btn {
+            left: -18px;
+        }
+        .next-btn {
+            right: -18px;
+        }
+
+        .slider-btn:hover {
+            background: #000;
+        }
+
+        /* FRAME EVENT 9:16 */
+        .event-image-frame {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #000; /* hitam elegan */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* POSTER */
+        .event-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* DEFAULT: penuh */
+        }
+
+        /* 🔐 MODE AMAN (AUTO) */
+        .event-image-frame img[data-safe="true"] {
+            object-fit: contain; /* kalau poster aneh */
+        }
+
+        .event-image {
+            width: 100%;
+            height: 280px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .event-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* ================= HALL OF FAME (FIX STYLE LINK) ================= */
+        .hof-grid {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            flex-wrap: nowrap;
+            /* Sembunyikan scrollbar agar rapi (opsional) */
+            scrollbar-width: none;
+        }
+
+        .hof-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 400; /* tidak bold */
+            color: #6b7280; /* abu halus */
+            margin-top: -20px; /* mendekat ke judul */
+            margin-bottom: 40px;
+        }
+
+        /* KARTU HALL OF FAME (YANG SUDAH JADI LINK) */
+        .hof-card {
+            min-width: 200px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+
+            /* --- PERBAIKAN UTAMA --- */
+            text-decoration: none; /* Hilangkan garis bawah */
+            color: #000; /* Paksa teks jadi hitam, jangan biru */
+            display: block; /* Agar area klik kotak utuh */
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* EFEK HOVER (KEREN) */
+        .hof-card:hover {
+            transform: translateY(-5px); /* Naik sedikit */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Muncul bayangan */
+        }
+
+        /* FOTO PROFILE */
+        .avatar {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid #f0f0f0; /* Tambahan border tipis biar rapi */
+        }
+
+        /* NAMA USER */
+        .hof-card h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #000; /* Pastikan hitam */
+            font-weight: 700;
+        }
+
+        /* LEVEL USER (h6) */
+        .hof-card h6 {
+            font-size: 12px;
+            color: #ff2d2d; /* Merah untuk level (opsional) atau #666 abu */
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .badges {
+            margin-top: 8px;
+            display: flex; /* Biar badge rapi di tengah */
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .badges img {
+            width: 24px; /* Sedikit diperbesar dari 20px agar jelas */
+            height: 24px;
+            object-fit: contain;
+        }
+
+        /* ================= FOOTER FINAL (SEMUA JADI LINK & UKURAN SAMA) ================= */
+        footer {
+            background: #232323;
+            padding: 50px 0;
+            color: #ffffff;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Logo ZHIB (Tetap paling besar karena Brand) */
+        .footer-brand {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 5 TULISAN DI FOOTER (UKURAN SAMA & JADI TOMBOL) */
+        .footer-text-link {
+            color: #ffffff;
+            font-size: 15px; /* Ukuran seragam */
+            font-weight: 700; /* Tebal (Bold) agar seperti tombol tulisan */
+            text-decoration: none;
+            display: block; /* Agar setiap link baris baru */
+            margin-bottom: 14px; /* Jarak antar tulisan */
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        /* Efek Hover (Merah saat disentuh) */
+        .footer-text-link:hover {
+            color: #ff2d2d;
+            transform: translateX(5px);
+        }
+
+        /* Icon Sosmed */
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .social-link:hover {
+            color: #ff2d2d;
+            transform: translateY(-3px);
+        }
+
+        .slider-container {
+            position: relative;
+            z-index: 5; /* Pastikan container slider lebih tinggi dari background */
+        }
+
+        .slider-btn {
+            z-index: 100 !important; /* Paksa tombol di atas segalanya */
+            cursor: pointer; /* Pastikan kursor berubah jadi tangan */
+            pointer-events: auto !important; /* Paksa tombol menerima klik */
+            background: rgba(0, 0, 0, 0.8); /* Gelapkan sedikit biar lebih kontras */
+        }
+
+        .slider-btn:active {
+            transform: translateY(-50%) scale(0.9); /* Efek visual saat dipencet */
+        }
+
+        /* Pastikan scroll wrapper merespon scroll programmatik */
+        .scroll-wrapper {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* ---    */
     </style>
 </head>
 

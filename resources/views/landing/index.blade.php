@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('page-style')
-    @include('styles.landing')
-@endsection
+@extends('styles.landing')
 
 @section('content')
 

@@ -1,6 +1,4 @@
-@section('page-style')
-    @include('styles.landing')
-@endsection
+@extends('styles.header')
 
 <header class="navbar @yield('navbar-class')">
     <div class="navbar-container">

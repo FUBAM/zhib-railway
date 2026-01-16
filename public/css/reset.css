@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #a7b0bf;
+  color: #000;
+}
+
+/* HEADER */
+.simple-header {
+  background: #f5f5f5;
+  padding: 16px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* MAIN */
+.reset-container {
+  background: #f5f5f5;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.reset-container h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.reset-icon {
+  width: 80px;
+  margin: 20px 0;
+}
+
+.reset-desc {
+  font-size: 13px;
+  color: #555;
+  max-width: 480px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+/* FORM */
+.reset-form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.reset-form label {
+  font-size: 12px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.reset-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.reset-form button {
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ================= FOOTER FINAL (SEMUA JADI LINK & UKURAN SAMA) ================= */
+footer {
+  background: #232323;
+  padding: 50px 0;
+  color: #ffffff;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+/* Logo ZHIB (Tetap paling besar karena Brand) */
+.footer-brand {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 5 TULISAN DI FOOTER (UKURAN SAMA & JADI TOMBOL) */
+.footer-text-link {
+  color: #ffffff;
+  font-size: 15px;      /* Ukuran seragam */
+  font-weight: 700;     /* Tebal (Bold) agar seperti tombol tulisan */
+  text-decoration: none;
+  display: block;       /* Agar setiap link baris baru */
+  margin-bottom: 14px;  /* Jarak antar tulisan */
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+/* Efek Hover (Merah saat disentuh) */
+.footer-text-link:hover {
+  color: #ff2d2d;
+  transform: translateX(5px);
+}
+
+/* Icon Sosmed */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-link:hover {
+  color: #ff2d2d;
+  transform: translateY(-3px);
+}

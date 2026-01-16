@@ -1,0 +1,89 @@
+/* ================= DETAIL BERITA STYLE ================= */
+
+.news-page {
+  padding: 40px 20px;
+  background: #ffffff; /* Background putih bersih */
+  min-height: 80vh;
+}
+
+/* Container utama dibatasi lebarnya agar enak dibaca (seperti medium/blog) */
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ================= PERBAIKAN GAMBAR HERO (16:9 & BACKGROUND PUTIH) ================= */
+
+/* Bingkai Utama Gambar */
+.article-image-wrapper {
+  width: 100%;
+  /* KUNCI 1: Memaksa bingkai memiliki rasio 16:9 */
+  aspect-ratio: 16 / 9; 
+  margin-bottom: 40px;
+  
+  /* KUNCI 2: Latar belakang putih untuk mengisi ruang kosong */
+  background-color: #ffffff; 
+  
+  /* Opsional: Saya tambahkan border tipis agar batas bingkai 16:9 terlihat jelas */
+  border: 1px solid #e0e0e0; 
+  
+  /* Agar sudut tumpul (optional, hapus jika ingin siku tajam) */
+  /* border-radius: 12px; */
+  /* overflow: hidden; */
+  
+  /* Flexbox untuk memastikan gambar benar-benar di tengah bingkai */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gambar di dalam bingkai */
+.article-img {
+  /* Gambar akan mencoba memenuhi bingkai 16:9 */
+  width: 100%;
+  height: 100%; 
+  display: block;
+  border-radius: 15px;
+  
+  /* KUNCI 3: 'contain' artinya gambar ditampilkan UTUH.
+     Tidak akan dicrop, tidak akan ditarik (gepeng).
+     Jika rasio gambar beda dengan 16:9, sisa ruang akan diisi background wrapper (putih) */
+  object-fit: contain; 
+}
+
+/* Judul Berita */
+.article-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 32px; /* Ukuran besar */
+  font-weight: 800; /* Sangat tebal */
+  text-align: center; /* Rata tengah */
+  color: #000;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  padding: 0 20px; /* Sedikit padding agar tidak mepet layar HP */
+}
+
+/* Isi Paragraf */
+.article-content {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.8; /* Jarak antar baris lega agar mudah dibaca */
+  text-align: justify; /* Rata Kanan Kiri (Justify) sesuai gambar */
+}
+
+.article-content p {
+  margin-bottom: 24px; /* Jarak antar paragraf */
+}
+
+/* Responsive untuk HP */
+@media (max-width: 768px) {
+  .article-title {
+    font-size: 24px;
+    text-align: left; /* Di HP biasanya judul rata kiri lebih enak */
+  }
+  
+  .article-content {
+    text-align: left; /* Di HP justify kadang bikin spasi bolong-bolong */
+  }
+}

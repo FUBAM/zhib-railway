@@ -1,0 +1,182 @@
+/* =========================================
+   STYLE MODERATOR CHAT (PIXEL PERFECT)
+   File: assets/css/moderator-chat.css
+   ========================================= */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #F8F9FB; /* Warna background abu-abu muda */
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #1F2937;
+    overflow: hidden; /* Hilangkan scroll body utama */
+}
+
+/* --- NAVBAR --- */
+.chat-navbar {
+    background: #F8F9FB; /* Sesuai gambar, navbar menyatu dengan bg */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left { display: flex; gap: 40px; }
+.nav-item {
+    text-decoration: none; color: #111; font-weight: 700; font-size: 14px;
+}
+.nav-item:nth-child(2) { color: #666; } /* Events warna abu */
+
+.nav-center h1 {
+    font-size: 16px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.nav-right .search-box {
+    background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; 
+    padding: 6px 14px; display: flex; align-items: center; gap: 8px; width: 200px;
+}
+.search-box input { border: none; outline: none; font-size: 13px; width: 100%; color: #666; }
+.search-box i { color: #9CA3AF; font-size: 12px; }
+
+/* --- CHAT AREA --- */
+.chat-area {
+    flex: 1;
+    padding: 20px 15%; /* Margin kiri kanan lebar seperti di gambar */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Jarak antar chat */
+}
+
+.msg-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0; /* Gap diatur manual via margin elemen */
+    max-width: 100%;
+}
+
+/* AVATAR */
+.msg-avatar img {
+    width: 45px; height: 45px; border-radius: 8px; /* Kotak rounded */
+    object-fit: cover; cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.1s;
+}
+.msg-avatar img:hover { transform: scale(1.05); }
+
+/* GARIS PENGHUBUNG (ACCENT BAR) */
+.accent-bar {
+    width: 6px;
+    border-radius: 4px;
+    margin-top: 0; /* Sejajar atas */
+    align-self: stretch; /* Memanjang sesuai tinggi bubble */
+}
+/* Warna Bar */
+.bar-blue { background-color: #1E3A8A; }
+.bar-black { background-color: #111; }
+
+/* BUBBLE */
+.msg-bubble {
+    background: #FFFFFF;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+    flex: 1; /* Mengisi ruang tersedia */
+    max-width: 700px; /* Batas lebar bubble */
+}
+.msg-bubble p { margin: 0; }
+
+/* --- SPESIFIK POSISI --- */
+
+/* PESAN KIRI (Orang Lain) */
+.msg-row.left .msg-avatar { margin-right: 15px; }
+.msg-row.left .accent-bar { 
+    margin-right: 15px; 
+}
+
+/* PESAN KANAN (Saya) */
+.msg-row.right {
+    justify-content: flex-end;
+}
+.msg-row.right .msg-avatar { margin-left: 15px; order: 3; }
+.msg-row.right .accent-bar { 
+    margin-left: 15px; order: 2;
+}
+.msg-row.right .msg-bubble {
+    text-align: left; /* Teks tetap rata kiri */
+    order: 1;
+}
+
+/* --- FOOTER INPUT --- */
+.chat-footer-wrapper {
+    padding: 20px 15% 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.loading-icon svg {
+    width: 30px; height: 30px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.input-container {
+    flex: 1;
+    background: #FFFFFF;
+    border: 1px solid #000; /* Border hitam tebal sesuai desain */
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.input-container input {
+    width: 100%; border: none; outline: none; font-size: 16px; color: #333;
+}
+.input-icons { display: flex; gap: 15px; }
+.input-icons button {
+    background: none; border: none; cursor: pointer; font-size: 20px; color: #111;
+}
+
+/* --- DROPDOWN MENU (FIXED) --- */
+.action-menu {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    background-color: #D1D5DB; /* Abu-abu solid */
+    padding: 8px;
+    border-radius: 12px;
+    width: 160px;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Style untuk Item Menu (Baik 'Lihat Profil' maupun 'Kick') */
+.menu-item {
+    font-weight: 700;
+    font-size: 18px; /* Ukuran font besar & jelas */
+    color: #000; /* Default Hitam */
+    padding: 10px 12px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.menu-item:last-child { margin-bottom: 0; }
+
+/* Efek Hover: Muncul Kotak Putih */
+.menu-item:hover {
+    background-color: #FFFFFF;
+}
+
+/* Khusus untuk tombol Kick agar teksnya merah */
+.menu-item.kick {
+    color: #FF0000;
+}

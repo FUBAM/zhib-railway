@@ -1,0 +1,221 @@
+/* ================= TENTANG KAMI STYLE ================= */
+
+.about-page {
+  padding: 60px 40px;
+  background: #ffffff;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Jarak antar section yang lega */
+}
+
+/* --- ROW LAYOUT (GAMBAR & TEKS) --- */
+.about-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Membagi layar jadi 2 kolom */
+  gap: 50px;
+  align-items: center;
+}
+
+/* Untuk membalik posisi (Teks Kiri, Gambar Kanan) */
+.about-row.reverse .about-image {
+  order: 2; /* Gambar pindah ke kanan */
+}
+.about-row.reverse .about-text {
+  order: 1; /* Teks pindah ke kiri */
+}
+
+/* Styling Gambar */
+.about-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 4px; /* Sedikit lengkungan seperti di desain */
+}
+
+/* Styling Teks */
+.about-text h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+/* --- OVERLAY TEXT (MISI & VISI) --- */
+.overlay-wrapper {
+  position: relative; /* Agar teks bisa ditaruh di atas gambar */
+}
+
+/* Menggelapkan gambar agar tulisan putih terbaca */
+.overlay-wrapper img {
+  filter: brightness(0.7); 
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Benar-benar di tengah */
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- KELOMPOK KAMI (TIM) --- */
+.team-section {
+  margin-top: 40px;
+}
+
+.team-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #000;
+  /* text-align: center; (Opsional, di desain sepertinya rata kiri) */
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  /* justify-content: center; */
+}
+
+/* ================= REVISI TIM KAMI (1 BARIS LURUS) ================= */
+
+.team-grid {
+  display: grid;
+  /* KUNCI: Memaksa menjadi 6 kolom dalam 1 baris */
+  grid-template-columns: repeat(6, 1fr); 
+  
+  /* Jarak antar foto diperkecil sedikit agar muat rapi */
+  gap: 20px; 
+  
+  /* Lebarkan container agar 6 orang muat sejajar */
+  max-width: 100%; 
+  margin: 0 auto;
+}
+
+.team-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Agar teks nama rata kiri (sesuai gambar) atau tengah */
+  text-align: left; 
+  overflow: hidden;  
+}
+
+.team-card img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  pointer-events: none;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background-color: #f0f0f0;
+}
+
+.team-card:hover img {
+    transform: scale(1.08);        /* BESARIN GAMBAR */
+    filter: brightness(1.05);
+}
+
+.team-info h4 {
+  font-size: 14px; /* Ukuran font disesuaikan agar tidak pecah */
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: #000;
+  text-transform: uppercase;
+  white-space: nowrap; /* Mencegah nama turun ke baris baru jika kepanjangan */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-info span {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* ================= RESPONSIVE (PERBAIKAN) ================= */
+
+/* 1. TAMPILAN TABLET (Layar dibawah 900px) */
+@media (max-width: 900px) {
+  
+  /* Atur Tim jadi 2 Kolom */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+    max-width: 600px;
+    justify-content: center;
+  }
+
+  /* Hapus width manual karena sudah pakai Grid */
+  .team-card {
+    width: 100%; 
+  }
+
+  /* Atur Section "Siapa Kami / Misi" jadi memanjang ke bawah */
+  .about-row {
+    grid-template-columns: 1fr; /* Jadi 1 kolom */
+    gap: 30px;
+    text-align: center; /* Opsional: Teks jadi rata tengah */
+  }
+
+  /* Membalik urutan agar Gambar tetap di atas Teks pada mode HP/Tablet */
+  .about-row.reverse .about-image {
+    order: -1; /* Gambar pindah ke urutan pertama */
+  }
+  
+  .about-row.reverse .about-text {
+    order: 1;
+  }
+
+  /* Kecilkan tinggi gambar agar proporsional */
+  .about-image img {
+    height: 300px;
+  }
+}
+
+/* 2. TAMPILAN HP (Layar dibawah 600px) */
+@media (max-width: 600px) {
+  
+  /* Atur Tim jadi 1 Kolom (Memanjang ke bawah) */
+  .team-grid {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  /* Rata tengah untuk kartu tim */
+  .team-card {
+    text-align: center;
+    align-items: center; /* Jika pakai flexbox di dalam card */
+  }
+
+  /* Gambar lebih kecil lagi di HP */
+  .about-image img {
+    height: 250px;
+  }
+  
+  .about-page {
+    padding: 40px 20px;
+  }
+}

@@ -1,0 +1,62 @@
+services:
+  # PHP & Laravel
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    image: laravel-app
+    container_name: app-zhib
+    restart: unless-stopped
+    working_dir: /var/www
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www
+    networks:
+      - laravel-net
+
+  # MySQL Database
+  db:
+    image: mariadb:10.6
+    container_name: db-zhib
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: zhib
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - laravel-net
+
+  # PHPMyAdmin (Opsional - untuk cek database lewat browser)
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: pma-zhib
+    links:
+      - db
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_ARBITRARY: 1
+    networks:
+      - laravel-net
+
+  node:
+    image: node:20-alpine
+    container_name: node-zhib
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+    ports:
+      - "5173:5173"
+    entrypoint: ["npm"]
+
+networks:
+  laravel-net:
+    driver: bridge
+
+volumes:
+  dbdata:

@@ -1,0 +1,191 @@
+/* ================= HALAMAN KOMUNITAS SAYA ================= */
+
+.my-comm-page {
+  padding: 40px 20px;
+  background: #ffffff;
+  min-height: 80vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* --- HEADER SECTION (JUDUL & SEARCH SEJAJAR) --- */
+.page-header {
+  display: flex;
+  align-items: center; /* Vertikal center */
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #000;
+  white-space: nowrap; /* Agar teks "Grup Saya" tidak turun baris */
+}
+
+/* --- SEARCH BOX --- */
+.search-box {
+  flex-grow: 1; /* Search bar memenuhi sisa ruang di kanan */
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 15px 12px 45px; /* Padding kiri besar untuk icon */
+  border: 1px solid #f0f0f0;
+  background: #fafafa;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.search-box input:focus {
+  background: #fff;
+  border-color: #000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+}
+
+/* --- LIST CARD --- */
+.community-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.comm-card {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- GAMBAR DENGAN BINGKAI (SAMA SEPERTI SEBELUMNYA) --- */
+.comm-img {
+  flex-shrink: 0;
+  width: 300px;
+  aspect-ratio: 16 / 9;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comm-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Gambar utuh di tengah */
+}
+
+/* --- KONTEN TEKS --- */
+.comm-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10px; /* Sedikit turun agar sejajar visual dengan gambar */
+}
+
+.comm-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.comm-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify; /* Sesuai desain agar rapi rata kanan-kiri */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column; /* Di HP, Judul di atas, Search di bawah */
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .page-title {
+    font-size: 28px;
+  }
+
+  .comm-card {
+    flex-direction: column;
+  }
+
+  .comm-img {
+    width: 100%; /* Gambar full width di HP */
+  }
+}
+
+/* ... (Kode CSS sebelumnya biarkan saja) ... */
+
+/* --- TOMBOL MASUK GRUP --- */
+.comm-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Tombol di kanan */
+  min-width: 140px; /* Lebar area tombol */
+}
+
+.btn-open-chat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px; /* Bentuk kapsul */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-open-chat:hover {
+  background-color: #333;
+  transform: translateX(5px); /* Efek gerak sedikit ke kanan saat dihover */
+}
+
+.btn-open-chat i {
+  font-size: 12px;
+}
+
+/* RESPONSIVE: Di HP tombol jadi full width di bawah */
+@media (max-width: 768px) {
+  .comm-action {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .btn-open-chat {
+    width: 100%;
+    justify-content: center;
+  }
+  .btn-open-chat:hover {
+    transform: none; /* Matikan efek gerak di HP */
+    background-color: #333;
+  }
+}

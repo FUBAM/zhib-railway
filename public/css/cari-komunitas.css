@@ -1,0 +1,524 @@
+/* ================= HALAMAN CARI KOMUNITAS ================= */
+
+.comm-page {
+  padding: 40px 20px;
+  background: #ffffff;
+  min-height: 80vh;
+}
+
+.comm-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* --- SEARCH & FILTER BAR --- */
+.search-bar-wrapper {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.btn-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #000000;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.btn-filter:hover {
+  background: #f0f0f0;
+}
+
+.search-input-group {
+  flex-grow: 1;
+  position: relative;
+}
+
+.search-input-group input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1px solid #f0f0f0;
+  background: #fafafa;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.search-input-group input:focus {
+  border-color: #000;
+  background: #fff;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+/* --- LIST KOMUNITAS --- */
+.community-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.comm-card {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= PERBAIKAN BINGKAI GAMBAR (LETTERBOX) ================= */
+
+.comm-img {
+  flex-shrink: 0;
+  width: 300px;           /* Lebar tetap */
+  /* KUNCI 1: Aspek rasio tetap (misal 16:9 seperti berita, atau 3:2) */
+  aspect-ratio: 16 / 9;   
+  
+  /* KUNCI 2: Warna background untuk mengisi ruang kosong */
+  background-color: #f5f5f5; 
+  
+  border-radius: 8px;
+  overflow: hidden;
+  
+  /* Flexbox untuk memastikan gambar di tengah bingkai */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee; /* Opsional: border tipis biar rapi */
+}
+
+.comm-img img {
+  /* Gambar mencoba memenuhi bingkai */
+  width: 100%;
+  height: 100%;
+  
+  /* KUNCI 3: 'contain' agar gambar tampil UTUH, tidak terpotong/gepeng */
+  object-fit: contain; 
+}
+
+.comm-content {
+  flex-grow: 1;
+}
+
+.comm-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.comm-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.comm-stat {
+  font-size: 13px;
+  color: #888;
+}
+
+.comm-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 120px;
+}
+
+
+.btn-join {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn-join:hover {
+  background: #808080;
+  color: #ffffff;
+}
+
+/* ================= MODAL / POPUP STYLE ================= */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background: #fff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* FILTER BOX */
+.filter-box .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+  display: block;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+/* JOIN BOX (YAKIN DEK) */
+.join-box {
+  text-align: center;
+  max-width: 400px;
+}
+
+.join-icon {
+  width: 60px;
+  height: 60px;
+  background: #ffeb3b;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+.join-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.join-box p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* BUTTONS */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-footer.centered {
+  justify-content: center;
+}
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .comm-card {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .comm-img {
+    width: 100%;
+    height: 200px;
+  }
+  .comm-action {
+    width: 100%;
+  }
+  .btn-join {
+    width: 100%;
+  }
+}
+
+/* ================= POPUP CUSTOM "YAKIN DEK" ================= */
+
+/* Kotak Modal Khusus */
+.join-box-custom {
+  background: #f9f9f9; /* Warna abu sangat muda seperti di gambar */
+  border-radius: 20px; /* Sudut membulat */
+  padding: 40px 30px;
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Teks Judul */
+.join-box-custom h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 800; /* Sangat tebal */
+  color: #000;
+  line-height: 1.3;
+  margin-bottom: 40px; /* Jarak jauh ke tombol */
+}
+
+/* Container Tombol */
+.join-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Jarak antar tombol */
+}
+
+/* Style Tombol Hitam Bulat (Pill) */
+.btn-pill {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px; /* Membuat bentuk kapsul/pill */
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  min-width: 120px; /* Agar lebar tombol seragam */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s, background 0.2s;
+}
+
+/* Efek Hover Tombol */
+.btn-pill:hover {
+  background: #333; /* Agak abu saat disentuh */
+  transform: scale(1.05); /* Membesar sedikit */
+}
+
+/* ================= DESAIN FILTER BARU (3 KOLOM) ================= */
+
+/* 1. KOTAK MODAL UTAMA */
+.custom-filter-box {
+  background: #f8f9fa; /* Warna latar abu sangat muda (seperti gambar) */
+  max-width: 900px;    /* Lebih lebar agar muat 3 kolom */
+  width: 95%;
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+}
+
+/* 2. LAYOUT 3 KOLOM */
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: flex-start; /* Agar tinggi kotak mengikuti isi */
+}
+
+.filter-column {
+  flex: 1; /* Setiap kolom sama lebar */
+  min-width: 200px;
+}
+
+/* 3. JUDUL PILL (Provinsi, Kota, dll) */
+.filter-header-pill {
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px; /* Bentuk kapsul */
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.filter-header-pill span {
+  font-size: 10px;
+}
+
+/* 4. KARTU OPSI PUTIH */
+.filter-options-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Bayangan halus */
+}
+
+/* 5. ITEM CHECKBOX */
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Kustomisasi Checkbox agar mirip gambar (Kotak) */
+.checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #000; /* Warna centang hitam saat aktif */
+  cursor: pointer;
+}
+
+/* Warna teks saat dipilih (opsional, biar lebih tegas) */
+.checkbox-item input:checked + span {
+  color: #000;
+  font-weight: 500;
+}
+
+.more-options {
+  color: #888;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* 6. TOMBOL FILTER HITAM */
+.filter-footer-custom {
+  display: flex;
+  justify-content: flex-end; /* Rata kanan */
+  margin-top: 20px;
+}
+
+.btn-black-filter {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-black-filter:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* 7. TOMBOL CLOSE (X) */
+.close-filter-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close-filter-btn:hover {
+  color: #000;
+}
+
+/* ================= RESPONSIVE (HP) ================= */
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column; /* Jadi tumpuk ke bawah di HP */
+    gap: 30px;
+  }
+  
+  .filter-column {
+    width: 100%;
+  }
+  
+  .filter-header-pill {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .btn-black-filter {
+    width: 100%; /* Tombol full width di HP */
+  }
+}

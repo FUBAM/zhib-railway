@@ -1,0 +1,308 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fcfcfc;
+  color: #333;
+}
+
+/* --- 1. HEADER STYLE --- */
+.chat-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 70px;
+  background: #f8f9fc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 100;
+  /* Tidak pakai shadow agar flat sesuai desain, tapi bisa ditambah border bawah tipis jika mau */
+}
+
+.header-left {
+  display: flex;
+  gap: 30px;
+}
+
+.header-link {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #999;
+}
+
+.header-link.active {
+  color: #000; /* Hitam pekat untuk menu aktif */
+}
+
+.header-center h1 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* SEARCH PILL DI HEADER */
+.search-pill {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 50px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+}
+
+.search-pill i {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.search-pill input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* --- MAIN CONTAINER --- */
+.event-container {
+  margin-top: 70px;
+  padding: 40px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 80vh;
+}
+
+.section-group {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* --- GRID KEGIATAN MENDATANG --- */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.activity-card {
+  background: #fff;
+  border: 1px solid #000; /* Border hitam tipis sesuai desain */
+  border-radius: 15px;
+  padding: 25px;
+  transition: transform 0.2s;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.activity-card h3 {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* --- GRID LOMBA MENDATANG --- */
+/* ... kode grid sebelumnya ... */
+.competition-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+}
+
+/* === UBAH BAGIAN KARTU LOMBA DI BAWAH INI === */
+
+.comp-card {
+  /* 1. BINGKAI ABU-ABU (Sama seperti Cari Event) */
+  background: #f9f9f9; 
+  
+  /* 2. PADDING LEBAR (Agar poster ada di dalam kotak) */
+  padding: 30px; 
+  
+  border-radius: 4px;
+  box-shadow: none; /* Polos tanpa bayangan */
+  transition: opacity 0.2s;
+}
+
+.comp-card:hover {
+  opacity: 0.9;
+}
+
+.comp-img {
+  width: 100%;
+  /* 3. RASIO POSTER 3:4 */
+  aspect-ratio: 3 / 4; 
+  background: #eee;
+  border-radius: 8px; /* Sudut gambar tumpul dikit */
+  overflow: hidden;
+  margin-bottom: 20px; /* Jarak gambar ke teks */
+}
+
+.comp-img img {
+  width: 100%;
+  height: 100%;
+  /* 4. FILLING BOX (Gambar mengisi penuh area tanpa gepeng) */
+  object-fit: cover; 
+  display: block;
+}
+
+.comp-content {
+  /* Reset padding karena sudah diatur oleh .comp-card induknya */
+  padding: 0; 
+}
+
+/* ... kode teks meta info di bawahnya tetap sama ... */
+/* --- META INFO (ICON + TEXT) --- */
+.meta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: #333;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.meta-item i {
+  width: 16px; /* Lebar icon tetap biar rapi */
+  text-align: center;
+}
+
+.status-registered {
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+/* --- NAVIGASI SLIDER (HIASAN) --- */
+.slider-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover {
+  background: #ddd;
+}
+
+/* ================= FOOTER FINAL (SEMUA JADI LINK & UKURAN SAMA) ================= */
+footer {
+  background: #232323;
+  padding: 50px 0;
+  color: #ffffff;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+/* Logo ZHIB (Tetap paling besar karena Brand) */
+.footer-brand {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 5 TULISAN DI FOOTER (UKURAN SAMA & JADI TOMBOL) */
+.footer-text-link {
+  color: #ffffff;
+  font-size: 15px;      /* Ukuran seragam */
+  font-weight: 700;     /* Tebal (Bold) agar seperti tombol tulisan */
+  text-decoration: none;
+  display: block;       /* Agar setiap link baris baru */
+  margin-bottom: 14px;  /* Jarak antar tulisan */
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+/* Efek Hover (Merah saat disentuh) */
+.footer-text-link:hover {
+  color: #ff2d2d;
+  transform: translateX(5px);
+}
+
+/* Icon Sosmed */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-link:hover {
+  color: #ff2d2d;
+  transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .event-header { padding: 0 20px; }
+  .header-center h1 { display: none; } /* Sembunyikan judul panjang di HP */
+  
+  .competition-grid {
+    grid-template-columns: repeat(2, 1fr); /* Jadi 2 kolom di HP */
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,298 @@
+/* =========================================
+   STYLE HALAMAN PAYMENT
+   File: assets/css/payment.css
+   ========================================= */
+
+body {
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* LEFT NAVIGATION */
+.nav-left {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  gap: 8px;
+}
+
+.nav-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-item:hover {
+  background: #f5f5f5;
+  color: #ff2d2d;
+}
+
+/* DROPDOWN KOMUNITAS & EVENT */
+.nav-dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.nav-link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+  background: #f5f5f5;
+  color: #ff2d2d;
+}
+
+.arrow {
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+
+.nav-dropdown.active .arrow {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-radius: 0 0 8px 8px;
+  padding: 8px 0;
+  display: none;
+  z-index: 1000;
+}
+
+.nav-dropdown.active .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #111;
+  transition: background 0.2s;
+  font-weight: 600;
+}
+
+.nav-dropdown-menu a:hover {
+  background: #f5f5f5;
+}
+
+/* =========================================
+   2. FIX PROFILE & AVATAR (BAGIAN KANAN)
+   Agar foto tidak besar dan layout rapi
+   ========================================= */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-navbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.profile-navbar:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+.profile-text {
+  text-align: right;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #000;
+}
+
+.profile-level {
+  font-size: 14px;
+  font-weight: 900;
+  color: #ff2d2d;
+}
+
+/* Update pada bagian ini di CSS kamu */
+.profile-avatar {
+  width: 48px !important;   /* Paksa ukuran tetap 48px */
+  height: 48px !important;  /* Paksa ukuran tetap 48px */
+  border-radius: 50%;
+  object-fit: cover;        /* Agar foto tidak lonjong/gepeng */
+  flex-shrink: 0;           /* Mencegah gambar menyusut atau meledak */
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: block;           /* Memastikan elemen bersifat block di dalam flex */
+}
+
+/* Profile Menu Dropdown */
+.profile-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  min-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  display: none;
+  z-index: 1000;
+}
+
+.profile-dropdown.active .profile-menu {
+  display: block;
+}
+
+.profile-menu a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #111;
+  text-decoration: none;
+  transition: background 0.2s;
+  font-weight: 600;
+}
+
+.profile-menu a:hover {
+  background: #f5f5f5;
+}
+
+.profile-menu .logout {
+  color: #ff2d2d;
+  font-weight: 700;
+}
+
+.profile-menu hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 6px 0;
+}
+
+.profile-menu .logout {
+    color: #E03137;
+}
+
+
+/* =========================================
+   3. LAYOUT UTAMA PAYMENT
+   ========================================= */
+
+.payment-page {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.payment-container {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+/* --- FORM --- */
+.payment-form { padding-top: 20px; }
+.form-group { margin-bottom: 24px; }
+.form-group label {
+    display: block; font-size: 14px; font-weight: 600; color: #333; margin-bottom: 10px;
+}
+.form-group input[type="text"], .form-group input[type="date"] {
+    width: 100%; padding: 14px 16px; border: 1px solid #E0E0E0; border-radius: 8px;
+    font-size: 14px; outline: none; transition: border-color 0.2s; font-family: inherit;
+    box-sizing: border-box;
+}
+.form-group input:focus { border-color: #8B5CF6; }
+
+/* Upload Area */
+.upload-area {
+    border: 2px dashed #E0E0E0; border-radius: 12px; padding: 50px 20px;
+    text-align: center; position: relative; cursor: pointer; background-color: #FAFAFA;
+    transition: all 0.2s;
+}
+.upload-area:hover { border-color: #8B5CF6; background-color: #F5F3FF; }
+.upload-icon { font-size: 36px; color: #9CA3AF; margin-bottom: 15px; }
+.upload-text { font-size: 14px; color: #6B21A8; font-weight: 600; margin: 0 0 5px 0; }
+.upload-sub { font-size: 12px; color: #9CA3AF; margin: 0; }
+.file-input { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+
+/* --- SUMMARY --- */
+.payment-summary { display: flex; flex-direction: column; gap: 24px; }
+
+.summary-card {
+    background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
+    border-radius: 16px; padding: 40px 30px; color: white; text-align: center;
+    box-shadow: 0 15px 30px rgba(124, 58, 237, 0.25);
+}
+.summary-card h3 { margin: 0 0 10px 0; font-size: 12px; font-weight: 500; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; }
+.event-name { margin: 0 0 10px 0; font-size: 16px; font-weight: 600; }
+.price-tag { font-size: 42px; font-weight: 700; margin-top: 10px; }
+
+.instruction-box { background-color: #F0F9FF; border-left: 4px solid #3B82F6; padding: 20px 24px; border-radius: 6px; }
+.instruction-box h4 { margin: 0 0 12px 0; font-size: 14px; color: #1E40AF; font-weight: 700; }
+.instruction-box p { margin: 0 0 15px 0; font-size: 13px; color: #3B82F6; }
+
+.bank-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 10px; color: #1E3A8A; align-items: flex-start; }
+.bank-label { font-weight: 600; }
+.bank-value { font-weight: 700; text-align: right; }
+.bank-value small { font-weight: 400; display: block; font-size: 11px; opacity: 0.8; }
+
+.btn-confirm {
+    background: linear-gradient(90deg, #7C3AED 0%, #8B5CF6 100%);
+    color: white; border: none; padding: 16px; width: 100%; border-radius: 10px;
+    font-size: 15px; font-weight: 700; cursor: pointer; transition: 0.2s;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+}
+.btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3); }
+
+.security-note { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #6B7280; justify-content: center; margin-top: 10px; }
+
+@media (max-width: 900px) {
+    .payment-container { grid-template-columns: 1fr; gap: 40px; }
+    .payment-page { align-items: flex-start; }
+}

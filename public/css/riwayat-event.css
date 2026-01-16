@@ -1,0 +1,216 @@
+/* RESET */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.riwayat-page {
+  padding: 30px 20px;
+  min-height: 80vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* --- SEARCH BAR ATAS (PANJANG) --- */
+.top-search-bar {
+  background: #fafafa;
+  border: 1px solid #eee; /* Sangat tipis */
+  padding: 15px 20px;
+  border-radius: 4px; /* Kotak sedikit tumpul */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.top-search-bar i {
+  color: #000;
+}
+
+.top-search-bar input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+}
+
+/* --- TOMBOL TAB BESAR --- */
+.big-tab-container {
+  display: flex;
+  gap: 30px; /* Jarak antar tombol */
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.big-tab-btn {
+  /* Default: Tidak Aktif (Abu-abu) */
+  background-color: #f5f5f5; 
+  color: #000;
+  
+  border: none;
+  padding: 15px 0;
+  width: 300px; /* Lebar tombol fix */
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.big-tab-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* STATE AKTIF (Hitam) */
+.big-tab-btn.active {
+  background-color: #1a1a1a; /* Hitam */
+  color: #ffffff; /* Putih */
+}
+
+/* --- JUDUL SECTION --- */
+.section-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+/* --- GRID KARTU (2 Kolom) --- */
+.history-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Kolom Sejajar */
+  gap: 20px;
+}
+
+/* --- KARTU TEXT (Style Baru) --- */
+.history-card {
+  background: #f5f5f5; /* Background Abu sesuai desain */
+  border: 1px solid #000; /* Border Hitam Tegas */
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.2s;
+}
+
+.history-card:hover {
+  transform: translateY(-3px);
+}
+
+.history-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.meta-row i {
+  width: 20px;
+  text-align: center;
+}
+
+/* ================= FOOTER FINAL (SEMUA JADI LINK & UKURAN SAMA) ================= */
+footer {
+  background: #232323;
+  padding: 50px 0;
+  color: #ffffff;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+/* Logo ZHIB (Tetap paling besar karena Brand) */
+.footer-brand {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 5 TULISAN DI FOOTER (UKURAN SAMA & JADI TOMBOL) */
+.footer-text-link {
+  color: #ffffff;
+  font-size: 15px;      /* Ukuran seragam */
+  font-weight: 700;     /* Tebal (Bold) agar seperti tombol tulisan */
+  text-decoration: none;
+  display: block;       /* Agar setiap link baris baru */
+  margin-bottom: 14px;  /* Jarak antar tulisan */
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+/* Efek Hover (Merah saat disentuh) */
+.footer-text-link:hover {
+  color: #ff2d2d;
+  transform: translateX(5px);
+}
+
+/* Icon Sosmed */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-link:hover {
+  color: #ff2d2d;
+  transform: translateY(-3px);
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+  .big-tab-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .big-tab-btn {
+    width: 100%; /* Tombol jadi full width di HP */
+  }
+  .history-grid {
+    grid-template-columns: 1fr; /* 1 Kolom di HP */
+  }
+}

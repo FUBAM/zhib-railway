@@ -1,4 +1,6 @@
 @extends('styles.landing')
+@extends('styles.registrasi')
+@extends('styles.reset')
 
 <!doctype html>
 <html lang="id">

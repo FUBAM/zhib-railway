@@ -1,5 +1,3 @@
- @extends('styles.registrasi')
- 
  <div class="auth-modal" id="registerModal">
     <button class="close-btn" onclick="closeAuth()">×</button>
     <h2>Buat Akun</h2>

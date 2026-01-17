@@ -24,6 +24,8 @@ class KomunitasSeeder extends Seeder
         $kategoriIds = Kategori::pluck('id')->toArray();
         $userIds = User::pluck('id')->toArray();
 
+        $kimage = $faker->numberBetween(1, 5);
+
         // Daftar nama komunitas untuk variasi data yang lebih nyata
         $daftarNama = [
             'Web Developer DIY', 'Sleman Design Hub', 'Bantul Creative Force', 
@@ -46,7 +48,7 @@ class KomunitasSeeder extends Seeder
                 'nama'        => $namaKomunitas, 
                 'deskripsi'   => 'Komunitas ini berfokus pada pengembangan ' . $namaKomunitas . 
                                  '. Mari bergabung untuk belajar dan berkolaborasi bersama para ahli di bidangnya.', //
-                'icon_url'    => 'image/komunitas/komunitas_(' . ($i + 1) . ').jpg',
+                'icon_url'    => 'image/komunitas/komunitas (' . ($kimage) . ').jpg',
                 'created_at'  => now(),
                 'updated_at'  => now(),
             ]);

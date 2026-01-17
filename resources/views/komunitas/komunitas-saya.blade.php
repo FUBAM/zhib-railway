@@ -67,9 +67,12 @@
 
                 <div class="comm-card">
                     <div class="comm-img">
-                        <img src="{{ $k->logo_url ? asset($k->logo_url) : asset('image/komunitas/komunitas-default.jpg') }}" 
-                             alt="{{ $k->nama }}"
-                             onerror="this.onerror=null; this.src='{{ asset('image/default-community.jpg') }}'">
+                        <img
+                            src="{{ asset($k->icon_url ?? 'image/komunitas/default.jpg') }}"
+                            alt="{{ $k->nama }}"
+                            loading="lazy"
+                            class="img-fallback"
+                        >
                     </div>
                     
                     <div class="comm-content">

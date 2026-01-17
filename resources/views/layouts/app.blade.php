@@ -1,3 +1,5 @@
+@extends('styles.landing')
+
 <!doctype html>
 <html lang="id">
 

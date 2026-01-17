@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@extends('styles.landing')
-
 @section('content')
 
 <section class="hero">

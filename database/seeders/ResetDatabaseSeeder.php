@@ -28,7 +28,7 @@ class ResetDatabaseSeeder extends Seeder
             'badge',
             'badge_user',
             'pembayaran',
-            'pemeritahuanan',
+            'pemberitahuan',
             'berita',
         ];
 

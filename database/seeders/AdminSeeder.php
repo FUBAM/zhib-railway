@@ -15,7 +15,6 @@ class AdminSeeder extends Seeder
 
         $user = User::firstWhere('email', $email);
         if ($user) {
-            // Ensure role set to admin
             if ($user->role !== 'admin') {
                 $user->role = 'admin';
                 $user->save();
@@ -24,7 +23,6 @@ class AdminSeeder extends Seeder
             return;
         }
 
-        // Create admin (idempotent because we check existence above)
         User::create([
             'nama' => 'admin',
             'email' => $email,
@@ -34,14 +32,13 @@ class AdminSeeder extends Seeder
             'level_terkini' => 1,
             'skor_kepercayaan' => 100,
             'terpercaya' => true,
+            'foto_profil_url' => 'image/avatar/default.jpg',
         ]);
 
         $this->command->info("Created admin user: {$email} (password: admin123)");
 
         
         $user1 = [
-            // 1. Peserta di Event 21 (Yang sudah selesai)
-            // Asumsi: Karena event selesai, statusnya mungkin sudah 'hadir'
             [
                 'nama' => 'user1',
                 'email' => 'user@satu.id',
@@ -51,14 +48,15 @@ class AdminSeeder extends Seeder
                 'level_terkini' => 6,
                 'skor_kepercayaan' => 99,
                 'terpercaya' => true,
-                ],
-                ];
+                'foto_profil_url' => 'image/avatar/default.jpg',
+            ],
+        ];
                 
-                DB::table('users')->insertOrIgnore($user1);
+        DB::table('users')->insertOrIgnore($user1);
                 
-                $user3 = [
-                    [
-                        'nama' => 'user3',
+        $user3 = [
+            [
+                'nama' => 'user3',
                 'email' => 'user@stiga.id',
                 'password' => Hash::make('usertiga'),
                 'role' => 'member',
@@ -66,10 +64,11 @@ class AdminSeeder extends Seeder
                 'level_terkini' => 9,
                 'skor_kepercayaan' => 99,
                 'terpercaya' => true,
-                ],
-                ];
-                DB::table('users')->insertOrIgnore($user3);
+                'foto_profil_url' => 'image/avatar/default.jpg',
+            ],
+        ];
+        DB::table('users')->insertOrIgnore($user3);
                 
-                User::factory(10)->create();
+        User::factory(10)->create();
     }
 }

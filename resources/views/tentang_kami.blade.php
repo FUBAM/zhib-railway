@@ -9,7 +9,7 @@
         {{-- SECTION: SIAPA KAMI --}}
         <section class="about-row">
             <div class="about-image">
-                <img src="{{ asset('image/img (1).jpg') }}" alt="Siapa Kami">
+                <img src="{{ asset('image/others/siapa_kami.jpg') }}" alt="Siapa Kami">
             </div>
 
             <div class="about-text">
@@ -40,14 +40,14 @@
             </div>
 
             <div class="about-image">
-                <img src="{{ asset('image/img (2).jpg') }}" alt="Tujuan Kami">
+                <img src="{{ asset('image/others/tujuan_kami.jpg') }}" alt="Tujuan Kami">
             </div>
         </section>
 
         {{-- SECTION: MISI --}}
         <section class="about-row">
             <div class="about-image overlay-wrapper">
-                <img src="{{ asset('image/img (3).jpg') }}" alt="Misi">
+                <img src="{{ asset('image/others/misi.jpg') }}" alt="Misi">
                 <h2 class="overlay-text">Misi</h2>
             </div>
 
@@ -71,7 +71,7 @@
             </div>
 
             <div class="about-image overlay-wrapper">
-                <img src="{{ asset('image/img (4).jpg') }}" alt="Visi">
+                <img src="{{ asset('image/others/visi.jpg') }}" alt="Visi">
                 <h2 class="overlay-text">Visi</h2>
             </div>
         </section>
@@ -82,12 +82,12 @@
 
             @php
               $team = [
-                  ['name' => 'IHSAN ZUFAR A', 'role' => 'UI / UX DESIGN', 'img' => 'zufar.png'],
+                  ['name' => 'IHSAN ZUFAR', 'role' => 'UI / UX DESIGN', 'img' => 'zufar.png'],
                   ['name' => 'HABIB FARHAN', 'role' => 'FRONTEND', 'img' => 'habib.jpeg'],
-                  ['name' => 'BASIR HENSEM SWAGGG', 'role' => 'BACKEND', 'img' => 'basir.jpg'],
+                  ['name' => 'MUHAMMAD BASIRU', 'role' => 'BACKEND', 'img' => 'basir.jpg'],
                   ['name' => 'AFRIZAL IBNU AZIZ', 'role' => 'BACKEND', 'img' => 'ibnu.jpg'],
-                  ['name' => 'RIDWAN KAMIL', 'role' => 'AUDITOR', 'img' => 'ridwan.jpeg'],
-                  ['name' => 'MBAK MBAK', 'role' => 'AUDITOR', 'img' => 'mbak.webp'],
+                  ['name' => 'RIDWAN NUR HERIYANTO', 'role' => 'AUDITOR', 'img' => 'ridwan.jpeg'],
+                  ['name' => 'ENI SULISTYO RINI', 'role' => 'AUDITOR', 'img' => 'mbak.webp'],
               ];
             @endphp
 

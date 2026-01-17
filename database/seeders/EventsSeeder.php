@@ -115,7 +115,7 @@ class EventsSeeder extends Seeder
                 'deskripsi'      => $faker->paragraph(3),
                 'berbayar'       => $isBerbayar,
                 'harga'          => $harga,
-                'poster_url'     => 'events/lomba-' . ($i + 1) . '.jpg',
+                'poster_url'     => 'events/lomba/lomba (' . ($i + 1) . ').jpg',
                 'status'         => 'published',
                 'start_date'     => Carbon::now()->addDays($faker->numberBetween(7, 60)), // Dimulai 7-60 hari ke depan
                 'created_at'     => now(),

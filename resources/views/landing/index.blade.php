@@ -21,7 +21,7 @@
                    @guest onclick="openLogin(); return false;" @endguest>
 
                     <div class="news-image-frame">
-                        <img src="{{ asset($item->gambar_url ?? 'image/default-news.jpg') }}" alt="">
+                        <img src="{{ asset($item->gambar_url ?? 'image/berita/berita-default.jpg') }}" alt="">
                     </div>
 
                     <p>{{ Str::limit($item->judul, 80) }}</p>
@@ -48,7 +48,7 @@
             @foreach($events as $event)
                 <div class="community-card">
                     <div class="event-image">
-                        <img src="{{ asset($event->poster_url ?? 'image/default-event.jpg') }}" alt="">
+                        <img src="{{ asset($event->poster_url ?? 'image/events/lomba-default.jpg') }}" alt="">
                     </div>
 
                     <div class="card-content">

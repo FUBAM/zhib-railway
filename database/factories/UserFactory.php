@@ -34,7 +34,7 @@ class UserFactory extends Factory
             'level_terkini' => fake()->numberBetween(1, 50),
             'skor_kepercayaan' => fake()->numberBetween(0, 100),
             'terpercaya' => fake()->boolean(20), // 20% peluang jadi true
-            'foto_profil_url' => 'image/avatar/avatar-default.jpg',
+            'foto_profil_url' => 'image/avatar/default.jpg',
             'bio' => fake()->sentence(),
             'remember_token' => Str::random(10),
         ];

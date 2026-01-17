@@ -46,7 +46,7 @@ class KomunitasSeeder extends Seeder
                 'nama'        => $namaKomunitas, //
                 'deskripsi'   => 'Komunitas ini berfokus pada pengembangan ' . $namaKomunitas . 
                                  '. Mari bergabung untuk belajar dan berkolaborasi bersama para ahli di bidangnya.', //
-                'icon_url'    => 'image/komunitas/k' . ($i + 1) . '.png', //
+                'icon_url'    => 'image/komunitas/default.png', //
                 'created_at'  => now(),
                 'updated_at'  => now(),
             ]);

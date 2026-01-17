@@ -33,7 +33,7 @@ class PembayaranSeeder extends Seeder
                 'user_id'           => $faker->randomElement($userIds),
                 'events_id'         => $eventId,
                 'jumlah_bayar'      => $event->harga,
-                'bukti_url'         => 'image/bukti-bayar/bb' . ($i + 1) . '.jpg',
+                'bukti_url'         => 'image/bukti-bayar/default.jpg',
                 'status'            => $status,
                 'diverifikasi_oleh' => ($status !== 'pending') ? $faker->randomElement($adminIds) : null,
                 'alasan_penolakan'  => ($status === 'ditolak') ? 'Bukti transfer tidak terbaca atau nominal tidak sesuai.' : null,

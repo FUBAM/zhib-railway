@@ -11,7 +11,7 @@ class PesertaSeeder extends Seeder
     public function run(): void
     {
         // Pastikan User dengan ID 12 SUDAH ADA di tabel users
-        $userId = 12;
+        $userId = 2;
 
         $dataPeserta = [
             // 1. Peserta di Event 21 (Yang sudah selesai)
@@ -20,7 +20,7 @@ class PesertaSeeder extends Seeder
                 'user_id' => $userId,
                 'events_id' => 21,
                 'status' => 'hadir', 
-                'bukti_url' => 'image/bukti/dummy.jpg',
+                'bukti_url' => null,
                 'review_text' => 'Eventnya seru banget!',
                 'created_at' => now()->subMonth(),
                 'updated_at' => now()->subMonth(),

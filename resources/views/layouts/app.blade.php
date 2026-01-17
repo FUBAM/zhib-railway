@@ -10,62 +10,6 @@
 
     <title>@yield('title', 'ZHIB')</title>
 
-    @stack('styles')
-
-    {{-- 🔥 CSS MODAL (LANGSUNG DISINI AGAR PASTI JALAN) 🔥 --}}
-    <style>
-        /* Overlay Gelap */
-        #authOverlay {
-            display: none; /* Sembunyi default */
-            position: fixed;
-            top: 0; 
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 9998; /* Sangat tinggi */
-            backdrop-filter: blur(2px);
-        }
-        #authOverlay.active {
-            display: block !important;
-        }
-
-        /* Modal Box */
-        .auth-modal {
-            display: none; /* Sembunyi default */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            z-index: 9999; /* Di atas overlay */
-            width: 90%;
-            max-width: 400px;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        
-        /* Class helper untuk menampilkan */
-        .auth-modal.active {
-            display: block !important; /* Paksa Tampil */
-            animation: fadeIn 0.3s ease;
-            opacity: 1;
-            transform: translate(-50%, -50%);
-        }
-
-        /* Hilangkan class hidden bawaan jika ada bentrok */
-        .auth-modal.hidden {
-            display: none !important;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translate(-50%, -60%); }
-            to { opacity: 1; transform: translate(-50%, -50%); }
-        }
-    </style>
 </head>
 
 <body>

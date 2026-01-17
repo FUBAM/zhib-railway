@@ -1,4 +1,4 @@
-@extends('styles.landing')
+<!-- @extends('styles.landing') -->
 <!-- @extends('styles.registrasi')
 @extends('styles.reset') -->
 

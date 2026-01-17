@@ -1,4 +1,5 @@
-/* =========================================
+<style>
+    /* =========================================
    STYLE DETAIL LOMBA (KONTEN TENGAH)
    File: assets/css/detail-lomba.css
    ========================================= */
@@ -150,3 +151,4 @@
     .detail-title { font-size: 20px; }
     .btn-daftar-hitam { width: 100%; }
 }
+</style>

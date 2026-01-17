@@ -1,4 +1,5 @@
-/* =========================================
+<style>
+    /* =========================================
    STYLE MODERATOR EVENT & MODAL (FINAL FIX)
    File: assets/css/moderator-kegiatan.css
    ========================================= */
@@ -211,3 +212,4 @@ footer {
     font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 10px;
 }
 .btn-modal-submit:hover { opacity: 0.9; }
+</style>

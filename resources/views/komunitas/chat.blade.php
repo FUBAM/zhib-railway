@@ -1,3 +1,5 @@
+@extends('styles.chat')
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,8 +7,6 @@
   <title>Grup Chat - {{ $grup->komunitas->nama ?? 'Komunitas' }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  {{-- Pastikan file CSS ada di public/css/chat.css --}}
-  <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
   
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">

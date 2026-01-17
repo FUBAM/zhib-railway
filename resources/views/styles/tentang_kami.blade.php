@@ -1,4 +1,5 @@
-/* ================= TENTANG KAMI STYLE ================= */
+<style>
+    /* ================= TENTANG KAMI STYLE ================= */
 
 .about-page {
   padding: 60px 40px;
@@ -219,3 +220,4 @@
     padding: 40px 20px;
   }
 }
+</style>

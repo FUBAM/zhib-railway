@@ -1,4 +1,5 @@
-/* ====================================
+<style>
+    /* ====================================
    STYLE KHUSUS HALAMAN LAPORAN (FIXED LAYOUT)
    ==================================== */
 
@@ -166,3 +167,4 @@
 .btn-action-large.yellow { background: #D9A507; }
 .btn-action-large.red { background: #E03137; }
 .btn-action-large.gray { background: #4B5563; }
+</style>

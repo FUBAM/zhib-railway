@@ -1,10 +1,7 @@
 @extends('layouts.app')
+@extends('styles.berita')
 
 @section('content')
-
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/detail_berita.css') }}">
-@endpush
 
 <section class="news-page">
     <div class="article-container">

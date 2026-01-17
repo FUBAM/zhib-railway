@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Konfirmasi Pemulihan Sandi | ZHIB')
+@extends('styles.reset')
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-@endpush
+@section('title', 'Konfirmasi Pemulihan Sandi | ZHIB')
 
 @section('content')
 <main class="reset-container">

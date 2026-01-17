@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-@endpush
+@extends('styles.profile')
 
 @php
     $defaultAvatar = 'image/avatar/avatar-default.jpg';

@@ -1,4 +1,5 @@
-/* ================= HALAMAN KOMUNITAS SAYA ================= */
+<style>
+    /* ================= HALAMAN KOMUNITAS SAYA ================= */
 
 .my-comm-page {
   padding: 40px 20px;
@@ -189,3 +190,4 @@
     background-color: #333;
   }
 }
+</style>

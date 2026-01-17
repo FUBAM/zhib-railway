@@ -1,4 +1,5 @@
-/* ================= DETAIL BERITA STYLE ================= */
+<style>
+    /* ================= DETAIL BERITA STYLE ================= */
 
 .news-page {
   padding: 40px 20px;
@@ -87,3 +88,4 @@
     text-align: left; /* Di HP justify kadang bikin spasi bolong-bolong */
   }
 }
+</style>

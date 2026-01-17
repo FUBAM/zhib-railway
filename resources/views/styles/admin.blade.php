@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 body {
   margin: 0; padding: 0;
@@ -200,3 +201,4 @@ a { text-decoration: none; }
   .stats-row { grid-template-columns: 1fr 1fr; }
   .bar { width: 30px; }
 }
+</style>

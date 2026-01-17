@@ -1,3 +1,6 @@
+@extends('styles.admin')
+@extends('styles.alomba')
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -6,8 +9,6 @@
     <title>Kelola Lomba - ZHIB Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/lomba.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 

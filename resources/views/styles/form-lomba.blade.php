@@ -1,4 +1,5 @@
-/* =========================================
+<style>
+    /* =========================================
    2. FORM STYLE (SESUAI GAMBAR)
    ========================================= */
 .form-area-wrapper { font-family: 'Inter', sans-serif; }
@@ -199,3 +200,4 @@ footer {
     
     .social-link:hover { transform: none; } /* Matikan efek hover ribet di HP */
 }
+</style>

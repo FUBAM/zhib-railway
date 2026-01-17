@@ -1,4 +1,5 @@
-* {
+<style>
+    * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -146,3 +147,5 @@ footer {
   color: #ff2d2d;
   transform: translateY(-3px);
 }
+
+</style>

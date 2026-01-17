@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-<link rel="stylesheet" href="{{ asset('css/tentang_kami.css') }}">
-@endpush
+@extends('styles.tentang_kami')
 
 @section('content')
 <main class="about-page">

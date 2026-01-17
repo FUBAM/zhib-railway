@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
+@extends('styles.event')
+@extends('styles.detail-lomba')
+
 {{-- Judul Tab Browser --}}
 @section('title', $event->judul . ' | ZHIB')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/event.css') }}">
-    {{-- Pastikan file ini ada, atau gabungkan stylenya --}}
-    <link rel="stylesheet" href="{{ asset('css/detail-lomba.css') }}"> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <style>

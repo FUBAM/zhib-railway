@@ -1,4 +1,5 @@
-/* RESET & FONT */
+<style>
+    /* RESET & FONT */
 body {
   margin: 0;
   padding: 0;
@@ -395,3 +396,4 @@ footer {
 .btn-apply:hover {
   background: #333;
 }
+</style>

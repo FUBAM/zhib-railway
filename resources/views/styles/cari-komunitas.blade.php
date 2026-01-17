@@ -1,4 +1,5 @@
-/* ================= HALAMAN CARI KOMUNITAS ================= */
+<style>
+    /* ================= HALAMAN CARI KOMUNITAS ================= */
 
 .comm-page {
   padding: 40px 20px;
@@ -522,3 +523,4 @@
     width: 100%; /* Tombol full width di HP */
   }
 }
+</style>

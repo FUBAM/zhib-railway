@@ -1,4 +1,5 @@
-/* --- TABLE STYLING --- */
+<style>
+    /* --- TABLE STYLING --- */
 .table-card {
   background: #fff; border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.02); overflow: hidden; margin-top: 20px;
@@ -191,3 +192,4 @@
 .btn-fill-red {
   flex: 1; background: #E60000; color: #fff; border: none; padding: 10px; border-radius: 8px; font-weight: 600; cursor: pointer;
 }
+</style>

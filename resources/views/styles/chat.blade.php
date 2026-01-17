@@ -1,4 +1,5 @@
-/* Import Font agar mirip desain modern */
+<style>
+    /* Import Font agar mirip desain modern */
 body {
   margin: 0;
   padding: 0;
@@ -259,3 +260,4 @@ body {
     font-size: 18px;
   }
 }
+</style>

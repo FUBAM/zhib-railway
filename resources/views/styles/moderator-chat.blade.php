@@ -1,4 +1,5 @@
-/* =========================================
+<style>
+    /* =========================================
    STYLE MODERATOR CHAT (PIXEL PERFECT)
    File: assets/css/moderator-chat.css
    ========================================= */
@@ -180,3 +181,4 @@ body {
 .menu-item.kick {
     color: #FF0000;
 }
+</style>

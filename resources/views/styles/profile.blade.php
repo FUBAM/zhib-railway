@@ -1,4 +1,5 @@
-/* ================= RESET & GLOBAL ================= */
+<style>
+    /* ================= RESET & GLOBAL ================= */
 * {
     margin: 0;
     padding: 0;
@@ -841,3 +842,5 @@ footer {
     border-color: #ff0000 !important;
     color: #000000 !important; /* Teks Hitam (Sesuai request) */
 }
+
+</style>

@@ -1,3 +1,5 @@
+@extends('styles.landing')
+
 <div class="auth-modal" id="forgotModal">
     <button class="close-btn" onclick="closeAuth()">×</button>
 

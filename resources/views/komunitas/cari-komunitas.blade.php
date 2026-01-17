@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
+@extends('styles.profile')
+@extends('styles.cari-komunitas')
+
 @section('title', 'Cari Komunitas | ZHIB')
 
 @push('styles')
-{{-- CSS Library --}}
-<link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-<link rel="stylesheet" href="{{ asset('css/cari-komunitas.css') }}"> 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
 <style>

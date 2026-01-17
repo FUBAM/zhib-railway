@@ -1,4 +1,5 @@
-body {
+<style>
+    body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
@@ -306,3 +307,4 @@ footer {
     gap: 20px;
   }
 }
+</style>

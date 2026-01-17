@@ -29,7 +29,7 @@
                     <p>{{ Str::limit($item->judul, 80) }}</p>
                 </a>
             @empty
-                <p class="text-center">Tidak ada berita</p>
+                <p class="text-center" style="padding-left: 250;">Tidak ada berita</p>
             @endforelse
         </div>
     </div>

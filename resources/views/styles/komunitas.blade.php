@@ -1,4 +1,5 @@
-/* ====================================
+<style>
+    /* ====================================
    1. HEADER & FILTER WILAYAH
    ==================================== */
 .komunitas-header {
@@ -386,3 +387,4 @@ input[type="date"]:focus, input[type="time"]:focus {
     .candidate-item { flex-direction: column; align-items: flex-start; gap: 12px; }
     .btn-assign { width: 100%; justify-content: center; }
 }
+</style>

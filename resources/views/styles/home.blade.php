@@ -1,4 +1,5 @@
-/* ================= RESET ================= */
+<style>
+    /* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
@@ -617,3 +618,5 @@ footer {
     color: #ff2d2d;
     transform: translateY(-3px);
 }
+
+</style>

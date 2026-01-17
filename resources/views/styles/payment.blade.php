@@ -1,4 +1,5 @@
-/* =========================================
+<style>
+    /* =========================================
    STYLE HALAMAN PAYMENT
    File: assets/css/payment.css
    ========================================= */
@@ -296,3 +297,4 @@ body {
     .payment-container { grid-template-columns: 1fr; gap: 40px; }
     .payment-page { align-items: flex-start; }
 }
+</style>

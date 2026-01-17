@@ -1,4 +1,5 @@
-/* ====================================
+<style>
+    /* ====================================
    STYLE MANAJEMEN BERITA
    File: assets/css/admin-berita.css
    ==================================== */
@@ -131,3 +132,4 @@
     .news-card { flex-direction: column; }
     .nc-image-wrapper { width: 100%; height: 180px; }
 }
+</style>

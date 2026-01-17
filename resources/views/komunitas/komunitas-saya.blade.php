@@ -1,10 +1,10 @@
 @extends('layouts.app')
+@extends('styles.komunitas-saya')
+@extends('styles.profile')
 
 @section('title', 'Komunitas Saya | ZHIB')
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-<link rel="stylesheet" href="{{ asset('css/komunitas-saya.css') }}">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <style>
     /* Fix Navbar tertutup */

@@ -20,6 +20,7 @@ class Badge extends Model
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'badge_user', 'badge_id', 'user_id')
-            ->withPivot('earned_at');
+                ->using(BadgeUser::class)
+                ->withPivot('earned_at');
     }
 }

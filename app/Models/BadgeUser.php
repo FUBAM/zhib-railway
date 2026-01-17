@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Badge;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class BadgeUser extends Model
+class BadgeUser extends Pivot
 {
     protected $table = 'badge_user';
 

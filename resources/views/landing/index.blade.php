@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="hero">
-    <img src="{{ asset('image/img (8).jpg') }}" alt="Hero Image">
+    <img src="{{ asset('image/landing.jpg') }}" alt="Hero Image">
     <div class="hero-overlay">
         <h1>Temukan Teman Satu Frekuensi</h1>
         <p>Ribuan komunitas dan event seru menantimu.</p>

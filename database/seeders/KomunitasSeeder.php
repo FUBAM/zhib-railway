@@ -24,7 +24,7 @@ class KomunitasSeeder extends Seeder
         $kategoriIds = Kategori::pluck('id')->toArray();
         $userIds = User::pluck('id')->toArray();
 
-        $kimage = $faker->numberBetween(1, 5);
+        $kimage = $faker->numberBetween(1, 7);
 
         // Daftar nama komunitas untuk variasi data yang lebih nyata
         $daftarNama = [

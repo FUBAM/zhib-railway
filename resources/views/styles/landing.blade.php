@@ -77,39 +77,31 @@ body {
 }
 
 #authOverlay {
-    display: none; /* Sembunyi default */
     position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 9998; /* Sangat tinggi */
-    backdrop-filter: blur(2px);
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 9998;
+    display: none;
 }
 
 #authOverlay.active {
-    display: block !important;
+    display: block;
 }
 
 .auth-modal {
-    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #fff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 9999;
+    background: white;
+    border-radius: 12px;
     padding: 2rem;
-    border-radius: 14px;
-    z-index: 1000;
-    width: 90%;
-    max-width: 400px;
+    display: none;
 }
 
 .auth-modal.active {
-    display: block !important; /* Paksa Tampil */
-    animation: fadeIn 0.3s ease;
+    display: block;
 }
 
 .auth-modal.hidden {

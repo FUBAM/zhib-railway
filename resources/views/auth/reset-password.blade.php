@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('styles.reset')
 
 @section('title', 'Konfirmasi Pemulihan Sandi | ZHIB')
 

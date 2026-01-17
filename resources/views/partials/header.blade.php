@@ -1,5 +1,3 @@
-<!-- @extends('styles.header') -->
-
 <header class="navbar @yield('navbar-class')">
     <div class="navbar-container">
 

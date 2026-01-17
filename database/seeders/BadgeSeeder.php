@@ -29,7 +29,7 @@ class BadgeSeeder extends Seeder
             foreach ($eventBaru as $event) {
                 Badge::create([
                     'nama'      => $namaJuara,
-                    'image_url' => 'image/badges/winner_(' . $faker->numberBetween(1, 3) . '.png',
+                    'image_url' => 'image/badges/winner_(' . $faker->numberBetween(1, 3) . ').png',
                     'deskripsi' => "Diberikan kepada pemenang $namaJuara dalam ajang $event.",
                     'xp_bonus'  => $faker->numberBetween(5, 55),
                     'created_at' => now(),

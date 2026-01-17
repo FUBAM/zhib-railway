@@ -54,7 +54,7 @@ class BeritaSeeder extends Seeder
                 'judul'      => $judul,
                 'slug'       => $slug,
                 'konten'     => $faker->paragraphs(5, true), // Menghasilkan 5 paragraf teks berita
-                'gambar_url' => 'berita/berita (' . ($index + 1) . ').jpg', // Path gambar
+                'gambar_url' => 'image/berita/berita (' . ($index + 1) . ').jpg', // Path gambar
                 'status'     => 'published', // Status default published
                 'created_at' => now(),
                 'updated_at' => now(),

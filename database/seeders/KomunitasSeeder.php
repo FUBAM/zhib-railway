@@ -40,13 +40,13 @@ class KomunitasSeeder extends Seeder
             $namaKomunitas = $daftarNama[$i] ?? $faker->company;
 
             Komunitas::create([
-                'kota_id'     => $faker->randomElement($kotaIds), //
-                'kategori_id' => $faker->randomElement($kategoriIds), //
-                'pembuat_id'  => $faker->randomElement($userIds), //
-                'nama'        => $namaKomunitas, //
+                'kota_id'     => $faker->randomElement($kotaIds), 
+                'kategori_id' => $faker->randomElement($kategoriIds), 
+                'pembuat_id'  => $faker->randomElement($userIds), 
+                'nama'        => $namaKomunitas, 
                 'deskripsi'   => 'Komunitas ini berfokus pada pengembangan ' . $namaKomunitas . 
                                  '. Mari bergabung untuk belajar dan berkolaborasi bersama para ahli di bidangnya.', //
-                'icon_url'    => 'image/komunitas/default.png', //
+                'icon_url'    => 'image/komunitas/komunitas_(' . ($i + 1) . ').jpg',
                 'created_at'  => now(),
                 'updated_at'  => now(),
             ]);
